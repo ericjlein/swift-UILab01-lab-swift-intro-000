@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var lightBulb: UIImageView!
+    @IBOutlet weak var colorSelector: UISegmentedControl!
     
     
     override func viewDidLoad() {
@@ -24,12 +25,19 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        print(sender.selectedSegmentIndex)
+        switch colorSelector.selectedSegmentIndex {
+        case 0:
+            lightBulb.backgroundColor = UIColor.red
+        case 1:
+            lightBulb.backgroundColor = UIColor.yellow
+        case 2:
+            lightBulb.backgroundColor = UIColor.blue
+        case 3:
+            lightBulb.backgroundColor = UIColor.green
+        default:
+            lightBulb.backgroundColor = UIColor.blue
+        }
         
     }
     
-    
-
-   
-
 }
